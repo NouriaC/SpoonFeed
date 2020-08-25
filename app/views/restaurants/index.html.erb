@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
-    <div class="col">
+    <div class="col mb-5">
       <h1>All Restaurants</h1>
     </div>
   </div>
@@ -10,6 +10,7 @@
       <div class="card mb-5 text-center" style="width: 18rem;">
           <div class="card-body">
             <h3 class="card-title"><%= restaurant.name.capitalize %></h3>
+            <p><%= restaurant.user_id %> </p>
             <% if restaurant.photo.attached?  %>
               <%= cl_image_tag restaurant.photo.key, height: 300, width: 200, crop: :fill %>
               <% end %>
