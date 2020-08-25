@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>All Restaurants</h1>
+    </div>
+  </div>
+</div>
+<div class="cards d-flex flex-wrap justify-content-around ">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card mb-5 text-center" style="width: 18rem;">
+          <div class="card-body">
+            <h3 class="card-title"><%= restaurant.name.capitalize %></h3>
+            <% if restaurant.photo.attached?  %>
+              <%= cl_image_tag restaurant.photo.key, height: 300, width: 200, crop: :fill %>
+              <% end %>
+          </div>
+        <%= link_to 'See details', restaurant_path(restaurant), class: "btn" %>
+         </div>
+    <% end %>
+</div>
+
+<%= link_to "Create a restaurant", new_restaurant_path %>

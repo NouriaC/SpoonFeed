@@ -1,0 +1,9 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <% if @restaurant.photo.attached?  %>
+  <%= cl_image_tag @restaurant.photo.key, alt: "resto", height: 300, width: 200, crop: :fill %>
+  <% end %>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.category %></p>
+  <%= link_to "Back to all restaurants", restaurants_path %>
+</div>
